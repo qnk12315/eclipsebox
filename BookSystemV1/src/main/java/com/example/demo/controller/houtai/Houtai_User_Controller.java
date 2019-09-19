@@ -24,7 +24,7 @@ public class Houtai_User_Controller {
 	private RoleService roleService;
 	
 	/**
-	 * /houtai/user/manage
+	 * /houtai/user/manage 我试试
 	 */
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
