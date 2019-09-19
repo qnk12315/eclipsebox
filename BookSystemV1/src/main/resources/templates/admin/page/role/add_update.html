@@ -28,7 +28,7 @@
 			shade : 0.8
 		});
 		
-		$.post(save_url, {name:app.name,remark:app.remark,orderNo:app.orderNo
+		$.post(save_url, {name:app.name,orderNo:app.orderNo
 		}, function(result) {
 			if (result.success) {
 				window.parent.closeDlg(result.msg);
