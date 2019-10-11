@@ -152,7 +152,7 @@ function del(ids){
 			    ,url: '/admin/user/list'
 			    ,height: 'full-40'
 			    ,totalRow: true
-				,cols: [[
+				,cols: [ [
 			       {checkbox: true, fixed: true}
 				   
 			       ,{field:'orderNo', title: '排序号', width:60,style:'font-size: 12px;' }
@@ -161,12 +161,12 @@ function del(ids){
 			      ,{field:'trueName', title: '真实姓名', width:90,style:'font-size: 12px;' }
 			      ,{field:'roleId', title: '角色', width:90,style:'font-size: 12px;',templet: '#format_role' }
 			      
-			      ,{field:'remark', title: '备注', width:100 ,style:'font-size: 12px;'}
+			      ,{field:'remake', title: '备注', width:100 ,style:'font-size: 12px;'}
 			      ,{field:'createDateTime', title: '创建时间', width:140 ,style:'font-size: 12px;'}
 			      ,{field:'updateDateTime', title: '修改时间', width:140 ,style:'font-size: 12px;'}
 			      
 			      ,{fixed:'right', width:120,title: '操作',  toolbar: '#table_bar'}
-			       ]]
+			       ] ]
 			    ,id: 'table'
 			    ,page: true
 			    ,limits:[500,1000,2000,3000],

@@ -36,7 +36,7 @@ $(function(){
 		});
 		var roleId = $("#roleId").val();
 		
-		$.post(save_url, {name:app.name,trueName:app.trueName,remark:app.remark,pwd:app.pwd,orderNo:app.orderNo,'role.id':roleId
+		$.post(save_url, {name:app.name,trueName:app.trueName,remake:app.remake,pwd:app.pwd,orderNo:app.orderNo,'role.id':roleId
 		}, function(result) {
 			if (result.success) {
 				window.parent.closeDlg(result.msg);
@@ -88,7 +88,7 @@ $(function(){
 		<div class="layui-form-item layui-form-text">
 		    <label class="layui-form-label">备注</label>
 		    <div class="layui-input-block">
-		      <textarea placeholder="请输入内容"   v-model="remark"   class="layui-textarea" th:utext="${user?.remark}"></textarea>
+		      <textarea placeholder="请输入内容"   v-model="remake"   class="layui-textarea" th:utext="${user?.remake}"></textarea>
 		    </div>
 	   </div>
 		

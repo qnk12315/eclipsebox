@@ -54,4 +54,15 @@ public class UserController {
 		return result;
 	}
 	
+	/**
+	 * 注销
+	 *  /user/logout
+	 * @throws Exception
+	 */
+	@RequestMapping("/logout")
+	public String logout()throws Exception{
+		SecurityUtils.getSubject().logout(); //shiro的退出
+		return "redirect:/login";
+	}
+	
 }

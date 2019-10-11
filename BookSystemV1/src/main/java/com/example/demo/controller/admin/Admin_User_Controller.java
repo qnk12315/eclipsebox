@@ -110,8 +110,11 @@ public class Admin_User_Controller {
 			HttpServletRequest request) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
-		List<User> userList = userService.list(map, page-1, page);
+		List<User> userList = userService.list(map, page-1, limit);
 		long total = userService.getTotal(map);
+		for (User user : userList) {
+			System.err.println(user.toString());
+		}
 		map.put("data", userList);
 		map.put("count", total);
 		map.put("code", 0);

@@ -48,10 +48,6 @@ public class Houtai_User_Controller {
 		List<Role> roleList = roleService.list(map, 0, 1000);
 		mav.addObject("roleList", roleList);
 		
-		
-		mav.addObject("flag", true);
-		
-		
 		mav.addObject("btn_text", "添加");
 		mav.addObject("save_url", "/admin/user/add");
 		mav.setViewName("/admin/page/user/add_update");

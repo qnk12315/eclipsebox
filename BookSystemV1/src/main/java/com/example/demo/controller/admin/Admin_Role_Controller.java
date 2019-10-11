@@ -87,6 +87,9 @@ public class Admin_Role_Controller {
 		
 		List<Role> list = roleService.list(map, page-1, limit);
 		long total = roleService.getTotal(map);
+		for (Role role : list) {
+			System.err.println(role.toString());
+		}
 		map.put("data", list);
 		map.put("count", total);
 		map.put("code", 0);

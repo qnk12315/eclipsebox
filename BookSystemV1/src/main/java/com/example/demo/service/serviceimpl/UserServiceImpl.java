@@ -5,9 +5,14 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.UserDao;
+import com.example.demo.entity.Role;
 import com.example.demo.entity.User;
 
 import com.example.demo.service.UserService;
@@ -60,15 +65,20 @@ public class UserServiceImpl implements UserService {
 		userDao.save(user);
 		return 1;
 	}
+	
 	@Override
 	public List<User> list(Map<String, Object> map, Integer page, Integer pageSize) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Pageable pageable = PageRequest.of(page, pageSize);
+		//new PageRequest(page, pageSize, Sort.Direction.DESC, "id");
+		Page<User> list = userDao.findAll(pageable);
+		List<User> users = list.getContent();
+		return users;
 	}
 	@Override
 	public Long getTotal(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.count();
+		
 	}
 
 	
